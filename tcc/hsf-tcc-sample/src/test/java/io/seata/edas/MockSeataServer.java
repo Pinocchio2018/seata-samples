@@ -37,8 +37,7 @@ public class MockSeataServer {
      * @throws IOException the io exception
      */
     public static void main(String[] args) throws IOException {
-        server = new Server();
-        server.main(args);
+        Server.start(args);
     }
 
 }

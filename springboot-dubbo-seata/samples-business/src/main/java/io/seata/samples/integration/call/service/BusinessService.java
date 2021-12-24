@@ -26,4 +26,6 @@ import io.seata.samples.integration.common.response.ObjectResponse;
 public interface BusinessService {
 
     ObjectResponse handleBusiness(BusinessDTO businessDTO);
+
+    ObjectResponse handleGlobalLockBusiness(BusinessDTO businessDTO);
 }

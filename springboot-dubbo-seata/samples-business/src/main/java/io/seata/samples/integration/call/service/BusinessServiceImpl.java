@@ -26,6 +26,7 @@ import io.seata.samples.integration.common.dubbo.StockDubboService;
 import io.seata.samples.integration.common.enums.RspStatusEnum;
 import io.seata.samples.integration.common.exception.DefaultException;
 import io.seata.samples.integration.common.response.ObjectResponse;
+import io.seata.spring.annotation.GlobalLock;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
 
@@ -82,5 +83,11 @@ public class BusinessServiceImpl implements BusinessService {
         objectResponse.setMessage(RspStatusEnum.SUCCESS.getMessage());
         objectResponse.setData(response.getData());
         return objectResponse;
+    }
+
+    @Override
+    @GlobalLock
+    public ObjectResponse handleGlobalLockBusiness(BusinessDTO businessDTO) {
+        return null;
     }
 }

@@ -35,6 +35,22 @@ public class BusinessController {
         return businessService.handleBusiness(businessDTO);
     }
 
+    @PostMapping("/multi-thread/buy")
+    ObjectResponse handleConcurrentBusiness(@RequestBody BusinessDTO businessDTO) {
+        log.info("请求参数：{}", businessDTO.toString());
+        Thread a =new Thread(()->{
+            businessService.handleBusiness(businessDTO);
+        });
+        Thread b =new Thread(()->{
+            businessService.handleBusiness(businessDTO);
+        });
+        a.start();
+        b.start();
+        return businessService.handleBusiness(businessDTO);
+    }
+
+
+
     /**
      * 模拟用户购买商品下单业务逻辑流程
      *

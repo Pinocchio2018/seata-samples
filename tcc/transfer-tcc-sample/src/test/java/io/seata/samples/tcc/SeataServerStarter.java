@@ -29,8 +29,7 @@ public class SeataServerStarter {
     static Server server = null;
 
     public static void main(String[] args) throws IOException {
-        server = new Server();
-        server.main(args);
+        Server.start(args);
     }
 
 }

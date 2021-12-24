@@ -74,7 +74,13 @@ seata:
   registry:
     file:
       name: file.conf
-    type: nacos
+    type: redis
+    redis:
+      server-addr: localhost:6379
+      db: 0
+      password:
+      cluster: default
+      timeout: 0
     nacos:
       server-addr: localhost:8848
       namespace:
@@ -86,3 +92,4 @@ seata:
     nacos:
       namespace:
       server-addr: localhost:8848
+      data-id: seataServer.properties

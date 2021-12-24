@@ -26,5 +26,5 @@
         insert into t_order
         values (null, #{order.orderNo}, #{order.userId}, #{order.commodityCode}, ${order.count}, ${order.amount})
     </insert>
-
+    <!--(id, order_no, user_id, commodity_code, count, amount)-->
 </mapper>
